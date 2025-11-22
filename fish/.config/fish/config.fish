@@ -1,6 +1,6 @@
 set -gx PATH $HOME/.local/bin $HOME/.cargo/bin $HOME/bin $PATH
 if test (uname) = Linux
-    set -gx EDITOR=/usr/bin/vim
+    set -gx EDITOR /usr/bin/vim
 end
 set -gx VIEWER "bat --paging=always"
 set -gx MANPAGER "env MAN_PN=1 vim -M +MANPAGER -"
