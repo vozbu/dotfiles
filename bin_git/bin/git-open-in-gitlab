@@ -1,0 +1,42 @@
+#!/bin/bash
+
+# Usage:
+# git open-in-gitlab - opens current folder in gitlab
+# git open-in-gitlab <path> - opens path in gitlab
+
+REMOTE=`git remote -v | grep origin | grep fetch | awk '{ print $2 }'`
+REPO=`echo $REMOTE | sed -r 's/^[^:]+:([^\/]+\/[^\.]+).git/\1/'`
+GITLAB_ROOT="https://gitlab..com/$REPO/blob"
+
+BRANCH=$(git symbolic-ref HEAD 2>/dev/null)
+if [[ ! -z $BRANCH ]]; then
+    BRANCH=${BRANCH#refs/heads/}
+else
+    BRANCH="master"
+fi
+
+# despite it's name it can be a directory too
+FILE=${1}
+if [ -z "${FILE}" ]; then
+    FILE="$PWD"
+fi
+
+GIT_ROOT=`git rev-parse --show-toplevel`
+FILE=`realpath "$FILE" --relative-to "$GIT_ROOT"`
+
+URL="$GITLAB_ROOT/$BRANCH/$FILE"
+
+open_url()
+{
+    URL="$1"
+    case `uname` in
+        Linux)
+            which xdg-open > /dev/null 2> /dev/null && [ -v DISPLAY ] && xdg-open "$URL"
+            ;;
+        Darwin)
+            open "$URL"
+            ;;
+    esac
+}
+
+open_url "$URL"
