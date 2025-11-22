@@ -1,6 +1,4 @@
 set -gx PATH $HOME/.local/bin $HOME/.cargo/bin $HOME/bin $PATH
-set -gx CCACHE_COMPRESS 1
-set -gx CCACHE_SLOPPINESS pch_defines,time_macros
 if test (uname) = Linux
     set -gx EDITOR=/usr/bin/vim
 end
