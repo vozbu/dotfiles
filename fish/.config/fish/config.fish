@@ -11,7 +11,6 @@ set -gx MANPAGER "vim -c ASMANPAGER -"
 set -gx MANPATH "$HOME/.local/share/man" "$MANPATH"
 set -gx GIT_DISCOVERY_ACROSS_FILESYSTEM 1
 set -gx MAKEFLAGS "-j "(nproc)
-set -gx TESSDATA_PREFIX /usr/share/tessdata
 
 alias dockviz="docker run -it --rm -v /var/run/docker.sock:/var/run/docker.sock nate/dockviz"
 alias scp="scp -p -r"
