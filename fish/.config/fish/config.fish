@@ -11,7 +11,6 @@ set -gx VIEWER "bat --paging=always"
 set -gx MANPAGER "env MAN_PN=1 vim -M +MANPAGER -"
 set -gx MANPAGER "vim -c ASMANPAGER -"
 set -gx MANPATH "$HOME/.local/share/man" "$MANPATH"
-set -gx GIT_DISCOVERY_ACROSS_FILESYSTEM 1
 set -gx MAKEFLAGS "-j "(nproc)
 
 alias dockviz="docker run -it --rm -v /var/run/docker.sock:/var/run/docker.sock nate/dockviz"
