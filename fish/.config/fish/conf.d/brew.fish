@@ -7,4 +7,8 @@ if type -q brew
 
     set MANPATH "$HOMEBREW_PREFIX/share/man" "$MANPATH"
     set MANPATH "$HOMEBREW_PREFIX/opt/coreutils/libexec/gnuman" "$MANPATH"
+
+    if type -q "$HOMEBREW_PREFIX/bin/vim"
+        set -gx EDITOR "$HOMEBREW_PREFIX/bin/vim"
+    end
 end
