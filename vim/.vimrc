@@ -353,6 +353,9 @@ set conceallevel=2
 " Swagger preview
 nmap <unique> <leader>q <Plug>GenerateDiagram
 
+" Livedown
+let g:livedown_browser = 'firefox'
+
 " маппим русские буквы в английские для управления
 map ё `
 map й q
