@@ -33,8 +33,8 @@
 [push]
     default = current
 [gui]
-	fontui = -family \"Liberation Mono\" -size 11 -weight normal -slant roman -underline 0 -overstrike 0
-	fontdiff = -family \"Liberation Mono\" -size 11 -weight normal -slant roman -underline 0 -overstrike 0
+    fontui = -family \"Liberation Mono\" -size 11 -weight normal -slant roman -underline 0 -overstrike 0
+    fontdiff = -family \"Liberation Mono\" -size 11 -weight normal -slant roman -underline 0 -overstrike 0
 [help]
     autocorrect = -1
 [pull]
@@ -48,20 +48,10 @@
     autoStash = true
 [grep]
     threads = 8
-[includeIf "gitdir:~/programming/rb/"]
-    path = .gitconfig-work
-[includeIf "gitdir:~/programming/rb-adm/"]
-    path = .gitconfig-work
-[includeIf "gitdir:~/programming/target/"]
-    path = .gitconfig-work
-[includeIf "gitdir:~/programming/target-cpp/"]
-    path = .gitconfig-work
-[includeIf "gitdir:~/programming/target-web/"]
-    path = .gitconfig-work
 [filter "lfs"]
-	required = true
-	clean = git-lfs clean -- %f
-	smudge = git-lfs smudge -- %f
-	process = git-lfs filter-process
+    required = true
+    clean = git-lfs clean -- %f
+    smudge = git-lfs smudge -- %f
+    process = git-lfs filter-process
 [advice]
-	skippedCherryPicks = false
+    skippedCherryPicks = false
