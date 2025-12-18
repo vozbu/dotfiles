@@ -9,12 +9,16 @@ export default {
     defaultBrowser: "Firefox",
     handlers: [
         {
-            match: "*zoom.us/j/*",
+            match: "https://*.zoom.us/j/*",
             browser: "us.zoom.xos"
         },
         {
             match: "meet.google.com/*",
             browser: "Google Chrome"
-        }
+        },
+        {
+            match: "https://t.me/*",
+            browser: "Telegram"
+        },
     ]
 }
