@@ -10,6 +10,7 @@ set -gx MAKEFLAGS "-j "(nproc)
 set -gx XZ_OPT "-T0 -9"
 
 alias dockviz="docker run -it --rm -v /var/run/docker.sock:/var/run/docker.sock nate/dockviz"
-alias scp="scp -p -r"
 alias lg="lazygit"
+alias scp="scp -p -r"
+alias vi="nvim"
 alias yt-dlp="yt-dlp --cookies-from-browser firefox"
