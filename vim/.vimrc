@@ -252,7 +252,7 @@ endfunction
 map <C-\> :tab split<CR>:exec("tag ".expand("<cword>"))<CR>
 map <A-]> :vsp <CR>:exec("tag ".expand("<cword>"))<CR>
 nmap <F9> :TagbarToggle<CR>
-nmap <F10> :NERDTree<CR>
+nmap <F10> :NERDTreeFind<CR>
 set tags^=./.git/tags;
 
 " Clang Format
