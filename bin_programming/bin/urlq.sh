@@ -14,13 +14,14 @@ if [ $# -lt 1 ]; then
 fi
 
 MODE=$1
+shift
 case $MODE in
     "-e") JQ_MODE="@uri" ;;
     "-d") JQ_MODE="@urid" ;;
     *   ) echo "Unknown mode $MODE"; usage; exit 1 ;;
 esac
 
-if [ $# -gt 1 ]; then
+if [ $# -gt 0 ]; then
     # handle parameters
     echo "$@" | jq -Rr $JQ_MODE
 else
