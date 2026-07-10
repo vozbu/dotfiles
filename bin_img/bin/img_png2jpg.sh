@@ -5,6 +5,6 @@ for i in *.png; do
         echo "File ${i%png}jpg already exists, abort"
         exit 1
     fi
-    magick convert "$i" "${i%png}jpg"
+    magick "$i" "${i%png}jpg"
     touch "${i%png}jpg" -r "$i"
 done

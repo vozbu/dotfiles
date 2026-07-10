@@ -5,6 +5,6 @@ for i in *.tiff; do
         echo "File ${i%tiff}jpg already exists, abort"
         exit 1
     fi
-    convert "$i" "${i%tiff}jpg"
+    magick "$i" "${i%tiff}jpg"
     touch "${i%tiff}jpg" -r "$i"
 done

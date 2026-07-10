@@ -12,10 +12,12 @@ outfile="${filename}_stamped.${extension}"
 shift
 date=`LANG=ru_RU.UTF-8 date "+%F"`
 text="$@ $date"
-# you can list available fonts with command `convert -list font`
+# you can list available fonts with command `magick -list font`
 font="Courier"
 font="Noto Sans"
 font="Hack-Regular"
 
-convert "$infile" xc:none -gravity Center -fill "rgba(50%,50%,50%,0.10)" -weight Bolder -stroke white \
-    -font "$font" -pointsize 90 -encoding 'UTF-8' -draw "rotate -45 text 0,0 '${text}'" "${outfile}"
+pointsize=60
+
+magick "$infile" xc:none -gravity Center -fill "rgba(50%,50%,50%,0.10)" -weight Bolder -stroke white \
+    -font "$font" -pointsize "$pointsize" -encoding 'UTF-8' -draw "rotate -45 text 0,0 '${text}'" "${outfile}"
