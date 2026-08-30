@@ -12,8 +12,11 @@ elif [ -e "$1" ]; then
 fi
 
 echo '#!/usr/bin/env bash
+# Exits the script immediately if any command fails (returns non-zero).
 set -e
+# Treats references to unset variables as errors and exits immediately.
 set -u
+# Causes a pipeline to fail if any command inside it fails, not just the last one.
 set -o pipefail
 
 ' > "$1"
