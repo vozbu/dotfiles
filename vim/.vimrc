@@ -52,6 +52,7 @@ Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'editorconfig/editorconfig-vim'
 Plugin 'godlygeek/tabular'
 Plugin 'google/vim-searchindex'
+Plugin 'keaising/im-select.nvim'
 Plugin 'lambdalisue/vim-manpager'
 Plugin 'majutsushi/tagbar'
 Plugin 'preservim/nerdcommenter'
@@ -394,3 +395,9 @@ let g:wordmotion_prefix = ','
 set langmap=ФИСВУАПРШОЛДЬТЩЗЙКЫЕГМЦЧНЯËXЪЖЭБЮ;ABCDEFGHIJKLMNOPQRSTUVWXYZ~{}:\"<>,фисвуапршолдьтщзйкыегмцчняёхъжэю;abcdefghijklmnopqrstuvwxyz`[]\;'.
 map б ,
 inoremap <C-т> <C-n>
+inoremap <C-ц> <C-w>
+if has('nvim')
+    if os == "Darwin"
+        execute "lua require('im_select').setup({ default_im_select = 'com.apple.keylayout.US' })"
+    endif
+endif
