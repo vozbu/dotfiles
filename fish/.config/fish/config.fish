@@ -13,4 +13,6 @@ alias dockviz="docker run -it --rm -v /var/run/docker.sock:/var/run/docker.sock 
 alias lg="lazygit"
 alias scp="scp -p -r"
 alias vi="nvim"
+alias vim="nvim"
+alias vimdiff="nvim -d"
 alias yt-dlp="yt-dlp --cookies-from-browser firefox"
